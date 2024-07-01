@@ -11,7 +11,8 @@ public class tutorialService {
     @Autowired
     ITutorialRepository iTutorialRepository;
 
-    public Tutorial createTutorial(Tutorial newTutorial){
-        return iTutorialRepository.save(newTutorial);
+    public Tutorial createTask(Tutorial newtutorial){
+        return iTutorialRepository.save(newtutorial);
     }
+
 }
