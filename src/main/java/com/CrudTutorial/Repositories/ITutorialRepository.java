@@ -1,4 +1,4 @@
-package com.CrudTutorial.models.Repositories;
+package com.CrudTutorial.Repositories;
 
 import com.CrudTutorial.models.Tutorial;
 import org.springframework.data.repository.CrudRepository;

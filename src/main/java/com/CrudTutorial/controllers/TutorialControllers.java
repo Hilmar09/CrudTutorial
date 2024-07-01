@@ -1,10 +1,8 @@
 package com.CrudTutorial.controllers;
 
-import com.CrudTutorial.service.TutorialService;
+import com.CrudTutorial.models.Tutorial;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api")
@@ -12,14 +10,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class TutorialControllers {
 
     @Autowired
-    TutorialService tutorialService;
-    @GetMapping (path = "/tasks")
-    public ArrayList<Task> getAllTask(){
-        return taskService.getAllTask();
-    }
-    @PostMapping(path = "/tasks")
-    public Task createTask(@RequestBody Task newTask){
-        return taskService.createTask(newTask);
+    com.CrudTutorial.service.tutorialService tutorialService;
+
+
+    @PostMapping(path = "/tutorial")
+    public Tutorial createTutorial(@RequestBody Tutorial newTutorial){
+        return tutorialService.createTutorial(newTutorial);
     }
 
 }
