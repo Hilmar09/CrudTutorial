@@ -28,9 +28,4 @@ public class Tutorial {
 
     @Column(name = "published")
     private boolean published;
-
-
-
-
-
 }
