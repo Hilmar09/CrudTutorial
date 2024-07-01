@@ -14,6 +14,7 @@ public class TutorialControllers {
 
     @Autowired
     TutorialService tutorialService;
+
     @DeleteMapping(path = "/tutorials")
     public void deleteAllTutorial(){
         tutorialService.deleteAllTutorial();
