@@ -10,12 +10,13 @@ import java.util.Optional;
 @Service
 public class TutorialService {
 
-@Autowired
+    @Autowired
     ITutorialRepository iTutorialRepository;
 
     public void deleteAllTutorial() {
         iTutorialRepository.deleteAll();
     }
+
     public void deleteTutorialById(int id) {
         iTutorialRepository.deleteById(id);
     }
@@ -29,7 +30,8 @@ public class TutorialService {
         return iTutorialRepository.save(newTutorial);
     }
 
-    public Tutorial createTutorial(Tutorial newtutorial){
+    public Tutorial createTutorial(Tutorial newtutorial) {
         return iTutorialRepository.save(newtutorial);
 
+    }
 }
