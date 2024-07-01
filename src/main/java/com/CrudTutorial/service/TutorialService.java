@@ -18,7 +18,7 @@ import org.springframework.stereotype.Service;
 import java.util.Optional;
 
 @Service
-
+public class TutorialService{
 @Autowired
     ITutorialRepository iTutorialRepository;
 
@@ -28,10 +28,6 @@ public void deleteAllTutorial() {
 public void deleteTutorialById(int id) {
     iTutorialRepository.deleteById(id);
     }
-
-
-    @Autowired
-    IService iService;
 
     public Tutorial updateTutorial(Tutorial tutorial, int id) {
         Optional<Tutorial> optionalTutorial = iService.findById(id);
