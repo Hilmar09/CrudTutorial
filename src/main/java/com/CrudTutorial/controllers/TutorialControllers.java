@@ -15,12 +15,12 @@ public class TutorialControllers {
     @Autowired
     TutorialService tutorialService;
     @DeleteMapping(path = "/tutorials")
-    public ArrayList<Tutorial> deleteAllTutorial(){
-        return TutorialService.deleteAllTutorial();
+    public void deleteAllTutorial(){
+        tutorialService.deleteAllTutorial();
     }
 
-    @DeleteMapping (path = "/tutorials")
-    public ArrayList<Tutorial> deleteTutorialById(int id){
-        return TutorialService.deleteTutorialById(id);
+    @DeleteMapping (path = "/tutorials/{id}")
+    public void deleteTutorialById(int id){
+        tutorialService.deleteTutorialById(id);
     }
 }

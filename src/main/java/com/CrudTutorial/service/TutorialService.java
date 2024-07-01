@@ -15,11 +15,11 @@ public class TutorialService {
 @Autowired
     ITutorialRepository iTutorialRepository;
 
-public ArrayList<Tutorial> deleteAllTutorial() {
-    return (ArrayList<Tutorial>) ITutorialRepository.deleteAllTutorial();
+public void deleteAllTutorial() {
+    iTutorialRepository.deleteAll();
 }
-public Optional<Tutorial> deleteTutorialById(int id) {
-    return iTutorialRepository.deleteAllById(int id);
-}
+public void deleteTutorialById(int id) {
+    iTutorialRepository.deleteById(id);
+    }
 
 }
