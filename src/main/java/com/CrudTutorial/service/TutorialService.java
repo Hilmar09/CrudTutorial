@@ -29,4 +29,7 @@ public class TutorialService {
         return iTutorialRepository.save(newTutorial);
     }
 
+    public Tutorial createTutorial(Tutorial newtutorial){
+        return iTutorialRepository.save(newtutorial);
+
 }

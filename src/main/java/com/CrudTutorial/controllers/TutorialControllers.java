@@ -27,4 +27,9 @@ public class TutorialControllers {
     public Tutorial updateTutorial(@PathVariable int id, @RequestBody Tutorial tutorial) {
         return tutorialService.updateTutorial(tutorial, id);
     }
+
+    @PostMapping(path = "/tutorial")
+    public Tutorial createTutorial(@RequestBody Tutorial newTutorial){
+        return tutorialService.createTutorial(newTutorial);
+    }
 }
