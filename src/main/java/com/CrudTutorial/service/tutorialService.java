@@ -14,5 +14,4 @@ public class tutorialService {
     public Tutorial createTutorial(Tutorial newtutorial){
         return iTutorialRepository.save(newtutorial);
     }
-
 }
