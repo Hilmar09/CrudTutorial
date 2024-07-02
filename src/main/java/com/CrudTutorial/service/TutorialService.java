@@ -18,15 +18,17 @@ import org.springframework.stereotype.Service;
 import java.util.Optional;
 
 @Service
-public class TutorialService{
-@Autowired
+public class TutorialService {
+
+    @Autowired
     ITutorialRepository iTutorialRepository;
 
-public void deleteAllTutorial() {
-    iTutorialRepository.deleteAll();
-}
-public void deleteTutorialById(int id) {
-    iTutorialRepository.deleteById(id);
+    public void deleteAllTutorial() {
+        iTutorialRepository.deleteAll();
+    }
+
+    public void deleteTutorialById(int id) {
+        iTutorialRepository.deleteById(id);
     }
 
     public Tutorial updateTutorial(Tutorial tutorial, int id) {
@@ -38,4 +40,8 @@ public void deleteTutorialById(int id) {
         return iTutorialRepository.save(newTutorial);
     }
 
+    public Tutorial createTutorial(Tutorial newtutorial) {
+        return iTutorialRepository.save(newtutorial);
+
+    }
 }
