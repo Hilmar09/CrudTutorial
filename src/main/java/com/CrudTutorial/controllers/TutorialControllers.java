@@ -19,7 +19,7 @@ public class TutorialControllers {
     }
 
     @DeleteMapping (path = "/tutorials/{id}")
-    public void deleteTutorialById(int id){
+    public void deleteTutorialById(@PathVariable int id){
         tutorialService.deleteTutorialById(id);
     }
 
