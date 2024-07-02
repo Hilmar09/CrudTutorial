@@ -2,7 +2,6 @@ package com.CrudTutorial;
 import com.CrudTutorial.Repositories.ITutorialRepository;
 import com.CrudTutorial.models.Tutorial;
 import com.CrudTutorial.service.TutorialService;
-import jakarta.persistence.Id;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -20,7 +19,7 @@ public class PostTutorialTest {
     @BeforeEach
     public void setUp(){
         MockitoAnnotations.openMocks(this);
-}
+    }
     @Test
     public void testCreateTutorial(){
         Tutorial newTutorial = new Tutorial();
