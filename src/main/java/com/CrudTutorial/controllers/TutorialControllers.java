@@ -20,13 +20,18 @@ public class TutorialControllers {
         return  tutorialService.getAllTutorial();
     }
 
+    @GetMapping(path = "/tutorials?title={title}")
+    public ArrayList<Tutorial> findByTitle(@RequestParam String title){
+        return tutorialService.findByTitle(title);
+    }
+
     @DeleteMapping(path = "/tutorials")
     public void deleteAllTutorial(){
         tutorialService.deleteAllTutorial();
     }
 
     @DeleteMapping (path = "/tutorials/{id}")
-    public void deleteTutorialById(int id){
+    public void deleteTutorialById(@PathVariable int id){
         tutorialService.deleteTutorialById(id);
     }
 
