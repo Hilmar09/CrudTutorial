@@ -35,8 +35,9 @@ public class TutorialControllers {
         return tutorialService.updateTutorial(tutorial, id);
     }
 
-    @PostMapping(path = "/tutorial")
+    @PostMapping(path = "/tutorials")
     public Tutorial createTutorial(@RequestBody Tutorial newTutorial){
         return tutorialService.createTutorial(newTutorial);
     }
+
 }
