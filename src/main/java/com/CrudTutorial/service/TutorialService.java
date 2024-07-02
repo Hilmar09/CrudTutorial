@@ -30,12 +30,12 @@ public void deleteTutorialById(int id) {
     }
 
     public Tutorial updateTutorial(Tutorial tutorial, int id) {
-        Optional<Tutorial> optionalTutorial = iService.findById(id);
+        Optional<Tutorial> optionalTutorial = iTutorialRepository.findById(id);
         Tutorial newTutorial = optionalTutorial.get();
         newTutorial.setTitle(tutorial.getTitle());
         newTutorial.setDescription(tutorial.getDescription());
         newTutorial.setPublished(tutorial.isPublished());
-        return iService.save(newTutorial);
+        return iTutorialRepository.save(newTutorial);
     }
 
 }
