@@ -5,6 +5,8 @@ import com.CrudTutorial.service.TutorialService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+
 @RestController
 @RequestMapping("/api")
 @CrossOrigin(origins = "*")
@@ -12,6 +14,11 @@ public class TutorialControllers {
 
      @Autowired
     TutorialService tutorialService;
+
+    @GetMapping (path = "/tutorials")
+    public ArrayList<Tutorial> getAllTutorial(){
+        return  tutorialService.getAllTutorial();
+    }
 
     @DeleteMapping(path = "/tutorials")
     public void deleteAllTutorial(){
