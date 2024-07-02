@@ -1,13 +1,32 @@
 package com.CrudTutorial;
+import com.CrudTutorial.Repositories.ITutorialRepository;
+import com.CrudTutorial.service.TutorialService;
+import jakarta.persistence.Id;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.junit.jupiter.api.Assertions.assertEquals;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
+import static org.mockito.Mockito.verify;
 
-@SpringBootTest
 public class DeleteTutorialTest {
+ @Mock
+   private ITutorialRepository iTutorialRepository;
+ @InjectMocks
+    private TutorialService tutorialService;
+ @BeforeEach
+    public void setUp() {
+        MockitoAnnotations.openMocks(this);
+        }
  @Test
-    void deleteAllTutorial(){
+    public void testDeleteAllTutorial() {
+     tutorialService.deleteAllTutorial();
+     verify(iTutorialRepository).deleteAll();
+     }
 
- }
-
+  @Test
+  public void testDeleteById(){
+     tutorialService.deleteTutorialById(1);
+     verify(iTutorialRepository).deleteById(1);
+  }
 }
