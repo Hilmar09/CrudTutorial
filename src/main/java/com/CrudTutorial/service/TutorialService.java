@@ -15,6 +15,10 @@ public class TutorialService {
     @Autowired
     ITutorialRepository iTutorialRepository;
 
+    public ArrayList<Tutorial> findByTitle(String title){
+        return iTutorialRepository.findByTitle(title);
+    }
+
     public ArrayList<Tutorial> getAllTutorial(){
         return (ArrayList<Tutorial>) iTutorialRepository.findAll();
 

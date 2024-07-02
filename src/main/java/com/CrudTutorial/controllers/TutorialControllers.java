@@ -20,6 +20,11 @@ public class TutorialControllers {
         return  tutorialService.getAllTutorial();
     }
 
+    @GetMapping(path = "/tutorials?title={title}")
+    public ArrayList<Tutorial> findByTitle(@RequestParam String title){
+        return tutorialService.findByTitle(title);
+    }
+
     @DeleteMapping(path = "/tutorials")
     public void deleteAllTutorial(){
         tutorialService.deleteAllTutorial();
@@ -35,7 +40,7 @@ public class TutorialControllers {
         return tutorialService.updateTutorial(tutorial, id);
     }
 
-    @PostMapping(path = "/tutorial")
+    @PostMapping(path = "/tutorials")
     public Tutorial createTutorial(@RequestBody Tutorial newTutorial){
         return tutorialService.createTutorial(newTutorial);
     }
