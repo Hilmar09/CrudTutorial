@@ -7,66 +7,90 @@ A client has requested a demo of a tutorial management system. In the future, th
 # **Project Description**
 
 The goal of this project is to develop a tutorial management system using Java and MySQL that allows users to:
-View a list of tutorials
-Add tutorials to the database
-Delete tutorials from the database
-Edit an existing tutorial
+- View a list of tutorials
+- Add tutorials to the database
+- Delete tutorials from the database
+- Edit an existing tutorial
+To achieve this, we have used the MVC design pattern, implemented a complete CRUD and performed unit tests for each functionality of the CRUD.
 
-# **Project Objectives**
+## Used technology
 
-Reinforce object-oriented programming concepts for students.
-Apply inheritance, MVC, dependency injection, and encapsulation to hide the internal implementation of classes and protect data.
-Utilize SOLID principles.
+- **Java**
+- **Spring Boot**
+- **MySQL**
+- **JUnit**
 
-# **Project Requirements**
+## Principles and Good Practices
 
-Knowledge of Java programming, Spring Boot, and MySQL.
-Understanding of Object-Oriented Programming (OOP).
-Adherence to best practices in programming.
+We have followed object-oriented programming principles and SOLID best practices to ensure that our code is robust, maintainable and extensible.
 
-# **Evaluation Modalities**
+## Project Structure
 
-The project will be evaluated as a group. The project submission deadline is Monday, 12/07.
+The project follows the MVC (Model-View-Controller) architecture to separate responsibilities and improve code organization.
 
-# **Expected Deliverables**
+- **Model**: Represents the data and business logic. Uses JPA entities to interact with the MySQL database.
+- **View**: In this project, a specific view layer has not been implemented since it is a backend. However, data is exposed through REST endpoints.
+- **Controller**: Manages HTTP requests and coordinates responses using services.
 
-A tutorial management system implemented in Java that allows users to upload and view tutorials, edit a tutorial, or delete it (CRUD).
-Implementation of inheritance, MVC, dependency injection, and encapsulation to hide the internal implementation of classes and protect data.
-Available Resources
-Access to videos and resources on object-oriented programming.
-Support and guidance provided by the training team.
+## Features
 
-**Project Timeline**
-Week 1: Design the classes and structure of the tutorial management system. Implement classes, encapsulation, and inheritance. Ensure Create and Read (CRUD) methods are functioning.
-Performance Criteria
-Diagram explaining the system.
-GitHub repository with the corresponding README.
-Project Structure
-**Packages**
-The project is divided into three main packages:
+1. **See List of Tutorials**
+ - Endpoint: `GET /tutorials`
+ - Description: Allows you to view all the tutorials available in the database.
 
-Model: Contains the data models for the tutorials.
-Controller: Contains the controllers that handle HTTP requests and responses.
-Service: Contains the service classes that contain the business logic and interact with the repository.
-CRUD Methods and Tests
-Each package includes CRUD methods and their respective tests to ensure the functionality is working correctly.
+2. **Add Tutorial**
+ - Endpoint: `POST /tutorials`
+ - Description: Allows you to add a new tutorial to the database.
+ - Body: `{ "title": "titulo", "description": "descripcion", "published": true/false }`
 
-**Model Package**
-Contains the data models representing the structure of tutorials.
+3. **Delete Tutorial**
+ - Endpoint: `DELETE /tutorials/{id}`
+ - Description: Allows you to delete an existing tutorial from the database.
 
-**Controller Package**
-Handles HTTP requests and responses:
+4. **Edit Tutorial**
+ - Endpoint: `PUT /tutorials/{id}`
+ - Description: Allows you to update an existing tutorial.
+ - Body: `{ "title": "new title", "description": "new description", "published": true/false }`
 
-Post: Adds a new tutorial to the database.
-Get: Retrieves tutorials from the database.
-Put: Edits an existing tutorial.
-Delete: Removes a tutorial from the database.
+## Evidence
 
-**Service Package**
-Contains business logic and interactions with the repository:
+Unit tests have been carried out for each of the CRUD functionalities using JUnit.
 
-Implements CRUD operations.
-Validates data before processing.
+## Installation and Execution
 
-**Tests**
-Each package includes tests to verify the functionality of CRUD operations.
+### Previous requirements
+
+- Java 11 or higher
+-Maven
+-MySQL
+
+### Instructions
+
+1. Clone the repository:
+
+ ```bash
+ git clone https://github.com/usuario/tutorial-management-system.git
+ cd tutorial-management-system
+ ```
+
+2. Configure MySQL database:
+
+ - Create a database called `tutorial_db`.
+ - Configure database credentials in the `src/main/resources/application.properties` file.
+
+3. Compile and run the application:
+
+ ```bash
+ mvn clean install
+ mvn spring-boot:run
+ ```
+
+4. The application will be available at `http://localhost:8080`.
+
+## Contributions
+
+Contributions are welcome. Please open an issue or pull request to discuss any changes you would like to make.
+- Hilmar Hernandez - [GitHub](https://github.com/Hilmar09)
+- Asdrubal Bello - [GitHub](https://github.com/abelloch)
+- Maksym Hryshchuk - [GitHub](https://github.com/Ruji7576)
+- Eva Martínez - [GitHub](https://github.com/EvaMartinez94)
