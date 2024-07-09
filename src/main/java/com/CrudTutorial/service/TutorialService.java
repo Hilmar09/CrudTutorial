@@ -6,40 +6,44 @@ import com.CrudTutorial.models.Tutorial;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-
 import java.util.ArrayList;
-
-import com.CrudTutorial.models.Tutorial;
-import com.CrudTutorial.resourses.IService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
-
 import java.util.Optional;
 
 @Service
-
-@Autowired
-    ITutorialRepository iTutorialRepository;
-
-public void deleteAllTutorial() {
-    iTutorialRepository.deleteAll();
-}
-public void deleteTutorialById(int id) {
-    iTutorialRepository.deleteById(id);
-    }
-
+public class TutorialService {
 
     @Autowired
-    IService iService;
+    ITutorialRepository iTutorialRepository;
+
+    public ArrayList<Tutorial> findByTitle(String title){
+        return iTutorialRepository.findByTitle(title);
+    }
+
+    public ArrayList<Tutorial> getAllTutorial(){
+        return (ArrayList<Tutorial>) iTutorialRepository.findAll();
+
+    }
+
+    public void deleteAllTutorial() {
+        iTutorialRepository.deleteAll();
+    }
+
+    public void deleteTutorialById(int id) {
+        iTutorialRepository.deleteById(id);
+    }
 
     public Tutorial updateTutorial(Tutorial tutorial, int id) {
-        Optional<Tutorial> optionalTutorial = iService.findById(id);
+
+        Optional<Tutorial> optionalTutorial = iTutorialRepository.findById(id);
         Tutorial newTutorial = optionalTutorial.get();
         newTutorial.setTitle(tutorial.getTitle());
         newTutorial.setDescription(tutorial.getDescription());
         newTutorial.setPublished(tutorial.isPublished());
-        return iService.save(newTutorial);
+        return iTutorialRepository.save(newTutorial);
     }
 
+    public Tutorial createTutorial(Tutorial newtutorial) {
+        return iTutorialRepository.save(newtutorial);
+
+    }
 }
